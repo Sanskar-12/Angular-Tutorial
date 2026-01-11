@@ -1,22 +1,36 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// import { RouterOutlet } from '@angular/router';
+import { Home } from './home/home';
+import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `
-    <h1>Hello world</h1>
-    <p>Welcome to {{ title }}</p>
-  `,
-  styles: [
-    `
-      p {
-        background-color: red;
-      }
-    `,
+  // Here you have to register your component you are using
+  imports: [
+    // RouterOutlet,
+    Home,
+    Header,
   ],
+  // In template you can give your component's html structure
+  template: `
+    <app-home />
+    <app-header />
+  `,
+
+  // In Styles you can give your styles css
+  // styles: [
+  //   `
+  //     p {
+  //       background-color: red;
+  //     }
+  //   `,
+  // ],
+
+  // In templateUrl you can give your html folder path
   // templateUrl: './app.html',
+
+  // In styleUrl you can give your css folder path
   // styleUrl: './app.scss',
 })
 export class App {
