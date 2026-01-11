@@ -31,7 +31,7 @@ import { Header } from './components/header/header';
   // templateUrl: './app.html',
 
   // In styleUrl you can give your css folder path
-  // styleUrl: './app.scss',
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('first-sanskar-app');
