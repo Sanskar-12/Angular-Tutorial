@@ -14,24 +14,26 @@ import { Header } from './components/header/header';
   ],
   // In template you can give your component's html structure
   template: `
-    <app-home />
     <app-header />
+    <main>
+      <app-home />
+    </main>
   `,
 
   // In Styles you can give your styles css
-  // styles: [
-  //   `
-  //     p {
-  //       background-color: red;
-  //     }
-  //   `,
-  // ],
+  styles: [
+    `
+      main {
+        padding: 16px;
+      }
+    `,
+  ],
 
   // In templateUrl you can give your html folder path
   // templateUrl: './app.html',
 
   // In styleUrl you can give your css folder path
-  styleUrl: './app.scss',
+  // styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('first-sanskar-app');
