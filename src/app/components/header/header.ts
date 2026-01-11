@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss',
 })
 export class Header {
-
+  // Signal is like useState in which we can store the values and call them to render it on the page
+  title = signal('My first angular app through signal');
 }
