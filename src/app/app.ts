@@ -3,10 +3,22 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  template: `
+    <h1>Hello world</h1>
+    <p>Welcome to {{ title }}</p>
+  `,
+  styles: [
+    `
+      p {
+        background-color: red;
+      }
+    `,
+  ],
+  // templateUrl: './app.html',
+  // styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('first-angular-app');
+  protected readonly title = signal('first-sanskar-app');
 }
