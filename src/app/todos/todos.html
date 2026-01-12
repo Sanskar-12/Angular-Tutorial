@@ -1,4 +1,8 @@
 <p>todos works!</p>
 @for (todo of todoItems(); track todo.id) {
-<p>{{ todo.title }}</p>
+<li class="todos__item">
+  <input type="checkbox" id="todo-{{ todo.id }}" [value]="todo.completed" />
+  <label for="todo-{{ todo.id }}">{{ todo.title }}</label>
+</li>
+
 }
