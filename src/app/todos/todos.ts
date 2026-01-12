@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Todo } from '../model/todos.type';
+import { TodoService } from './../services/todos';
+import { Component, inject, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-todos',
@@ -6,6 +8,14 @@ import { Component } from '@angular/core';
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
-export class Todos {
+// OnInit lets you run code when a component is created and initialized.
+export class Todos implements OnInit {
+  // injected the todo service
+  todoService = inject(TodoService);
+  todoItems = signal<Array<Todo>>([]);
 
+  ngOnInit(): void {
+    console.log(this.todoService.todoItems);
+    this.todoItems.set(this.todoService.todoItems);
+  }
 }
