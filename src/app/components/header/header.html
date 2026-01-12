@@ -1,4 +1,10 @@
 <!-- Title Calling through using signal -->
 <header>
-  <nav>{{ title() }}</nav>
+  <nav>
+    <!-- with the help of routerlink the page doesn't refresh -->
+    <span routerLink="/">{{ title() }}</span>
+    <ul>
+      <li routerLink="/todos">Todos</li>
+    </ul>
+  </nav>
 </header>

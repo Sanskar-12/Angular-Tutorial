@@ -6,4 +6,15 @@ header {
   color: white;
   align-items: center;
   justify-content: space-between;
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      list-style: none;
+    }
+  }
 }
