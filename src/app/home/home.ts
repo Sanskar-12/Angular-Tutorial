@@ -10,4 +10,8 @@ import { Greeting } from '../components/greeting/greeting';
 })
 export class Home {
   homeMessage = signal('This is a message to greeting');
+
+  keyUpHandler(event: KeyboardEvent) {
+    console.log(`User pressed the ${event.key} key`);
+  }
 }

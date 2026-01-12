@@ -1,2 +1,5 @@
 <p>home works!</p>
+<!-- Passing the data from home (parent) to greeting (child) -->
 <app-greeting [message]="homeMessage()" />
+<!-- Event Listener -->
+<input type="text" (keyup)="keyUpHandler($event)" />
