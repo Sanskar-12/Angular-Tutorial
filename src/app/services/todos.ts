@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Todo } from '../model/todos.type';
+import { HttpClient } from '@angular/common/http';
 
 // Angular services are basically helper classes used to handle business logic, data sharing, and reusable functionality outside of components.
 
@@ -8,18 +9,27 @@ import { Todo } from '../model/todos.type';
   providedIn: 'root',
 })
 export class TodoService {
-  todoItems: Todo[] = [
-    {
-      title: 'groceries',
-      id: 0,
-      userId: 1,
-      completed: true,
-    },
-    {
-      title: 'car wash',
-      id: 1,
-      userId: 1,
-      completed: false,
-    },
-  ];
+  // todoItems: Todo[] = [
+  //   {
+  //     title: 'groceries',
+  //     id: 0,
+  //     userId: 1,
+  //     completed: true,
+  //   },
+  //   {
+  //     title: 'car wash',
+  //     id: 1,
+  //     userId: 1,
+  //     completed: false,
+  //   },
+  // ];
+
+  // with this we can use http object to handle http request and response
+  http = inject(HttpClient);
+
+  // fetching the api of todos with the help of http object
+  getTodosFromApi() {
+    const url = 'https://jsonplaceholder.typicode.com/todos';
+    return this.http.get<Todo[]>(url);
+  }
 }
