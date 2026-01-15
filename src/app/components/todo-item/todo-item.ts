@@ -1,10 +1,12 @@
 import { Component, input, output } from '@angular/core';
 import { Todo } from '../../model/todos.type';
 import { HighlightCompletedTodo } from '../../directives/highlight-completed-todo';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-todo-item',
-  imports: [HighlightCompletedTodo],
+  // pipes are used to transform data in the template before displaying it
+  imports: [HighlightCompletedTodo, UpperCasePipe],
   templateUrl: './todo-item.html',
   styleUrl: './todo-item.scss',
 })
