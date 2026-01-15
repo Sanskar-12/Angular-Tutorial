@@ -2,10 +2,12 @@ import { catchError } from 'rxjs';
 import { Todo } from '../model/todos.type';
 import { TodoService } from './../services/todos';
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TodoItem } from '../components/todo-item/todo-item';
 
 @Component({
   selector: 'app-todos',
-  imports: [],
+  imports: [CommonModule, TodoItem],
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
@@ -30,5 +32,19 @@ export class Todos implements OnInit {
       .subscribe((todos) => {
         this.todoItems.set(todos);
       });
+  }
+
+  updateTodoItem(todoItem: Todo) {
+    this.todoItems.update((todos) => {
+      return todos.map((todo) => {
+        if (todo.id === todoItem.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+    });
   }
 }
